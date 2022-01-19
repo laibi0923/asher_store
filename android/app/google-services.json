@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "222001330950",
+    "project_id": "asher-177a1",
+    "storage_bucket": "asher-177a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222001330950:android:d335531c8a10c0ce6e3c87",
+        "android_client_info": {
+          "package_name": "com.asher.asher_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222001330950-oqh0ong1hdjqe5kcf0v2vad31h2jd4h5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.asher.asher_store",
+            "certificate_hash": "9d3480c80699ee12e15e155d39eb4f152261a034"
+          }
+        },
+        {
+          "client_id": "222001330950-q6s32qdrlr67rf34i7h8fg00u54mebqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKKflhGPvAX28eNFAprZVGzb9I7lHwBn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222001330950-q6s32qdrlr67rf34i7h8fg00u54mebqt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "222001330950-a2cdbp1pocpdjf12s12rp6lg0dujhqg0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.asher.asherStoreCms"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222001330950:android:f00c477c020afd6a6e3c87",
+        "android_client_info": {
+          "package_name": "com.asher.asher_store_cms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222001330950-q6s32qdrlr67rf34i7h8fg00u54mebqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKKflhGPvAX28eNFAprZVGzb9I7lHwBn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222001330950-q6s32qdrlr67rf34i7h8fg00u54mebqt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "222001330950-a2cdbp1pocpdjf12s12rp6lg0dujhqg0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.asher.asherStoreCms"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
