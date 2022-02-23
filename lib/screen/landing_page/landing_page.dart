@@ -22,19 +22,9 @@ class LandingPage extends StatelessWidget {
       body: ListView(
         physics: const BouncingScrollPhysics(),
         children: [
-          
-          Align(
-            alignment: Alignment.centerRight,
-            child: Container(
-              height: 70,
-              padding: const EdgeInsets.only(top: 20, right: 20),
-              child: displayCloseButton == false ? 
-              Container() :
-              IconButton(
-                onPressed: () => Navigator.pop(context), 
-                icon: const Icon(Icons.close)
-              ),
-            ),
+
+          Container(
+            height: 70,
           ),
 
           Center(
@@ -71,7 +61,7 @@ class LandingPage extends StatelessWidget {
               controller: _landingcontroller.pageController,
               onPageChanged: (index) => _landingcontroller.onPageChange(index),
               physics: const BouncingScrollPhysics(),
-              children: const [Login(), Register()]
+              children: const [ Login(), Register() ]
             ),
           ),
 
@@ -81,34 +71,34 @@ class LandingPage extends StatelessWidget {
 
               Container(
                 margin: const EdgeInsets.only(left: 10, right: 10),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(999),
-                  child: GestureDetector(
-                    onTap: () => _authcontroller.googleLogin(),
-                    child: Container(
-                      height: 42,
-                      width: 42,
+                child: GestureDetector(
+                  onTap: () => _authcontroller.googleLogin(),
+                  child: Container(
+                    height: 42,
+                    width: 42,
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
                       color: const Color(xMainColor),
-                      padding: const EdgeInsets.all(5),
-                      child: Image.asset('assets/icon/ic_google.png', color: Colors.white,)
-                    )
+                      borderRadius: BorderRadius.circular(999)
+                    ),
+                    child: Image.asset('assets/icon/ic_google.png', color: Colors.white,)
                   )
                 ),
               ),
 
               Container(
                 margin: const EdgeInsets.only(left: 10, right: 10),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(999),
-                  child: GestureDetector(
-                    onTap: () => _authcontroller.facebookLogin(),
-                    child: Container(
-                      height: 42,
-                      width: 42,
+                child: GestureDetector(
+                  onTap: () => _authcontroller.facebookLogin(),
+                  child: Container(
+                    height: 42,
+                    width: 42,
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
                       color: const Color(xMainColor),
-                      padding: const EdgeInsets.all(5),
-                      child: Image.asset('assets/icon/ic_facebook.png', color: Colors.white,)
-                    )
+                      borderRadius: BorderRadius.circular(999)
+                    ),
+                    child: Image.asset('assets/icon/ic_facebook.png', color: Colors.white,)
                   )
                 ),
               ),
