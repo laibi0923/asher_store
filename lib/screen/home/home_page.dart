@@ -104,11 +104,12 @@ class HomePage extends GetView<AuthController> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.only(top:20, bottom: 10),
+
+        Padding(
+          padding: const EdgeInsets.only(top:20, bottom: 10),
           child: Text(
-            '人氣排行榜',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            'hot_item'.tr,
+            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
         ), 
         
@@ -179,11 +180,11 @@ class HomePage extends GetView<AuthController> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
-        const Padding(
-          padding: EdgeInsets.only(top:20, bottom: 20),
+        Padding(
+          padding: const EdgeInsets.only(top:20, bottom: 20),
           child: Text(
-            '為你推薦',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            'recommendation_item'.tr,
+            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
         ), 
 
@@ -193,8 +194,8 @@ class HomePage extends GetView<AuthController> {
           onTap: () => Get.to(() => const SearchPage(searchKey: '新品',)),
           child: Container(
             padding: const EdgeInsets.only(top: 20, bottom: 20),
-            child: const Center(
-              child: Text('更多推薦產品')
+            child: Center(
+              child: Text('load_more_product'.tr)
             )
           ),
         ),

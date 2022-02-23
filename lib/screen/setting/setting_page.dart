@@ -143,6 +143,9 @@ class SettingPage extends GetWidget<AuthController> {
   }
 
   Widget _buildSettingMenu(){
+
+    final _settingController = Get.put(SettingController());
+
     return Padding(
       padding: const EdgeInsets.only(left: 30, right: 30, bottom: 150),
       child: Column(
@@ -230,16 +233,19 @@ class SettingPage extends GetWidget<AuthController> {
             ),
           ),
 
-          Container(
-            padding: const EdgeInsets.only(top: 10, bottom: 10),
-            child: Row(
-              children: const [
-                Expanded(
-                  child: Text('語言')
-                ),
-                Text('繁體'),
-              ],
-            )
+          GestureDetector(
+            onTap: () => _settingController.setLanguage(),
+            child: Container(
+              padding: const EdgeInsets.only(top: 10, bottom: 10),
+              child: Row(
+                children: [
+                  const Expanded(
+                    child: Text('語言')
+                  ),
+                  Text(_settingController.locale[_settingController.languageIndex.value]['name']),
+                ],
+              )
+            ),
           ),
 
           Container(

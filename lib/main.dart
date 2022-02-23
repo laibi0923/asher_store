@@ -9,6 +9,7 @@ import 'package:asher_store/controller/mailbox_controller.dart';
 import 'package:asher_store/controller/order_history_controller.dart';
 import 'package:asher_store/controller/product_controller.dart';
 import 'package:asher_store/controller/wishlist_controller.dart';
+import 'package:asher_store/localeString.dart';
 import 'package:asher_store/screen/splash_page/splash_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -54,6 +55,8 @@ class MyApp extends StatelessWidget {
       title: appName,
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
+      translations: LocaleString(),
+      locale: const Locale('en', 'US'),
       theme: ThemeData(
         primaryColor: Colors.white,
         scaffoldBackgroundColor: Colors.white,
