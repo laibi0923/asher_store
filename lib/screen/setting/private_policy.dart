@@ -23,12 +23,12 @@ class PrivatePolicy extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             children: [
 
-              const Padding(
-                padding: EdgeInsets.only(top: 40, bottom: 40),
+              Padding(
+                padding: const EdgeInsets.only(top: 40, bottom: 40),
                 child: Center(
                   child: Text(
-                    '隱私政策',
-                    style: TextStyle(fontSize: xTextSize18, fontWeight: FontWeight.bold),
+                    'private_policy_title'.tr,
+                    style: const TextStyle(fontSize: xTextSize18, fontWeight: FontWeight.bold),
                   )
                 ),
               ),
@@ -39,9 +39,9 @@ class PrivatePolicy extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '上次修改時間 : ${DateFormat('yyyy年MM月dd日').format(
+                      'last_modify'.tr + DateFormat('yyyy / MM / dd').format(
                         DateTime.fromMicrosecondsSinceEpoch(_policyController.privatePolicy.value.lastModify!.microsecondsSinceEpoch)
-                      )}',
+                      ),
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     Padding(

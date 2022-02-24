@@ -29,35 +29,35 @@ class ReviewOrder extends StatelessWidget {
                 Container(height: 80,),
 
                 CartSummaryItemView(
-                  title: '訂單日期', 
+                  title: 'review_order_date'.tr, 
                   value: DateFormat('yyyy/MM/dd  kk:mm').format(DateTime.fromMicrosecondsSinceEpoch(orderModel.orderDate!.microsecondsSinceEpoch)), 
                   isbold: false, 
                   showAddBox: false
                 ),
 
                 CartSummaryItemView(
-                  title: '訂單編號', 
+                  title: 'review_order_no'.tr, 
                   value: orderModel.orderNumber!, 
                   isbold: false, 
                   showAddBox: false
                 ),
 
                 CartSummaryItemView(
-                  title: '收件人', 
+                  title: 'review_receipient'.tr, 
                   value: '${orderModel.receipientInfo!['RECEIPIENT_NAME']}',
                   isbold: false, 
                   showAddBox: false
                 ),
 
                 CartSummaryItemView(
-                  title: '聯絡電話', 
+                  title: 'review_contact_no'.tr, 
                   value: '${orderModel.receipientInfo!['CONTACT']}',
                   isbold: false, 
                   showAddBox: false
                 ),
 
                 CartSummaryItemView(
-                  title: '運送地址', 
+                  title: 'review_shipping_address'.tr, 
                   value: '${orderModel.receipientInfo!['UNIT_AND_BUILDING']}\n${orderModel.receipientInfo!['ESTATE']}\n${orderModel.receipientInfo!['DISTRICT']}', 
                   isbold: false, 
                   showAddBox: false
@@ -77,35 +77,35 @@ class ReviewOrder extends StatelessWidget {
                 ),
 
                 CartSummaryItemView(
-                  title: '小計', 
+                  title: 'cart_subamount'.tr, 
                   value: 'HKD\$ ${orderModel.subAmount!.toStringAsFixed(2)}', 
                   isbold: false, 
                   showAddBox: false
                 ),
 
                 CartSummaryItemView(
-                  title: orderModel.discountCode!.isEmpty ? '折扣' : '折扣【${orderModel.discountCode}】', 
+                  title: orderModel.discountCode!.isEmpty ? 'cart_discount'.tr : '折扣【${orderModel.discountCode}】', 
                   value: '-HKD\$ ${orderModel.discountAmount!.toStringAsFixed(2)}', 
                   isbold: false, 
                   showAddBox: false
                 ),
 
                 CartSummaryItemView(
-                  title: '運費', 
+                  title: 'cart_shipping'.tr, 
                   value: 'HKD\$ ${orderModel.shippingAmount!.toStringAsFixed(2)}', 
                   isbold: false, 
                   showAddBox: false
                 ),
 
                 CartSummaryItemView(
-                  title: '總計', 
+                  title: 'cart_totalamount'.tr, 
                   value: 'HKD\$ ${orderModel.totalAmount!.toStringAsFixed(2)}', 
                   isbold: true, 
                   showAddBox: false
                 ),
 
                 CartSummaryItemView(
-                  title: '支付方式', 
+                  title: 'review_payment_method'.tr, 
                   value: orderModel.paymentMothed!, 
                   isbold: false, 
                   showAddBox: false

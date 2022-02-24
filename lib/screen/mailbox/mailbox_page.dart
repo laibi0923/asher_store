@@ -19,8 +19,8 @@ class MailboxPage extends GetWidget<AuthController> {
       appBar: AppBar(
         elevation: 0,
         automaticallyImplyLeading: false,
-        title: const Center(
-          child: Text('通知')
+        title: Center(
+          child: Text('mail_title'.tr)
         ),
       ),
       body: controller.auth.currentUser == null ? emptyUserMailBoxView() : 
@@ -44,7 +44,7 @@ class MailboxPage extends GetWidget<AuthController> {
                       backgroundColor: const Color(cPink),
                       foregroundColor: const Color(cGrey),
                       icon: Icons.delete,
-                      label: '刪除',
+                      label: 'delete_text'.tr,
                     )
                   ],
                 ),
@@ -81,8 +81,8 @@ class MailboxPage extends GetWidget<AuthController> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
 
-          const Text(
-            '快啲加入我地成為會員啦\n我地定期都會推出新產品同好多最新優惠, 想拎多啲著數? 加入我地, 一有就會係呢到通知精明既你架啦!!!',
+          Text(
+            'join_us_content'.tr,
             textAlign: TextAlign.center,
           ),
 
@@ -97,8 +97,8 @@ class MailboxPage extends GetWidget<AuthController> {
               ),
             ),
             onPressed: () => _rootController.jumpToPage(4),
-            child:  const Text(
-              '加入成為會員',
+            child: Text(
+              'join_us_btn'.tr,
             ),
           ),
 
@@ -122,11 +122,11 @@ class MailboxPage extends GetWidget<AuthController> {
               color: Colors.grey,
             ),
 
-            const Padding(
-              padding: EdgeInsets.only(top: 20),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
               child: Text(
-                '一有新通知即時會通知你',
-                style: TextStyle(color: Colors.grey),
+                'empty_mail_text'.tr,
+                style: const TextStyle(color: Colors.grey),
               ),
             )
             

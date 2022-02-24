@@ -20,20 +20,20 @@ class Register extends StatelessWidget {
         children: [
 
           CustomizeTextField(
-            title: '電子郵件', 
+            title: 'register_email'.tr, 
             textEditingController: _landingcontroller.emailEditingController,
             maxLine: 1,
           ),
 
           CustomizeTextField(
-            title: '密碼', 
+            title: 'register_pw'.tr, 
             isPassword: true,
             textEditingController: _landingcontroller.pwEditingController,
             maxLine: 1,
           ),
 
           CustomizeTextField(
-            title: '確認密碼',
+            title: 'register_pw2'.tr,
             isPassword: true,
             textEditingController: _landingcontroller.firmPwEditingController,
             maxLine: 1,
@@ -55,8 +55,8 @@ class Register extends StatelessWidget {
                 _landingcontroller.pwEditingController.text.trim(),
                 _landingcontroller.firmPwEditingController.text.trim()
               ),
-              child: const Text(
-                '註冊',
+              child: Text(
+                'register_registertext'.tr,
               ),
             )
           )

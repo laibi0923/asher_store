@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:asher_store/constants.dart';
 import 'package:loading_indicator/loading_indicator.dart';
+import 'package:get/get.dart';
 
 
 Widget cartItemView(CartModel cartdata, ProductModel productdata){
@@ -62,7 +63,7 @@ Widget cartItemView(CartModel cartdata, ProductModel productdata){
                   productdata.inStock == false ?
                   Expanded(
                     child: Text(
-                      productdata.inStock == false ? '此貨品已下架' : '',
+                      productdata.inStock == false ? 'cart_itemview_soldout'.tr : '',
                       style: const TextStyle(color: Color(cPink)),
                     )
                   ) :

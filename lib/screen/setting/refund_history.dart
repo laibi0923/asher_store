@@ -25,8 +25,8 @@ class RefundHistory extends GetWidget<AuthController> {
       body: Obx((){
         
         return _refundController.refundProductList.isEmpty ? 
-        const Center(
-          child: Text('沒有退貨紀錄'),
+        Center(
+          child: Text('empty_return_text'.tr),
         ) : 
         ListView.builder(
           itemCount: _refundController.refundProductList.length,
@@ -48,7 +48,7 @@ class RefundHistory extends GetWidget<AuthController> {
       elevation: 0,
       automaticallyImplyLeading: false,
       centerTitle: true,
-      title: const Text('退貨紀錄'),
+      title: Text('return_history'.tr),
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 10),
@@ -96,7 +96,7 @@ class RefundHistory extends GetWidget<AuthController> {
 
                   Row(
                     children: [
-                      const Text('訂單編號 : '),
+                      Text('return_order_no'.tr),
                       Expanded(
                         child: Text(
                           orderModel.orderNumber!.toUpperCase(),
@@ -137,9 +137,9 @@ class RefundHistory extends GetWidget<AuthController> {
                         ),
                       ),
 
-                      const Text(
-                        '已退出貨品',
-                        style: TextStyle(color: Colors.redAccent),
+                      Text(
+                        'return_text'.tr,
+                        style: const TextStyle(color: Colors.redAccent),
                       ),
 
                     ],

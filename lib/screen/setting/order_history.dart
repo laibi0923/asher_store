@@ -26,7 +26,7 @@ class OrderHistory extends GetWidget<AuthController> {
         elevation: 0,
         automaticallyImplyLeading: false,
         centerTitle: true,
-        title: const Text('訂單紀錄'),
+        title: Text('order_history'.tr),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10),
@@ -56,11 +56,11 @@ class OrderHistory extends GetWidget<AuthController> {
 }
 
 Widget _emptyView(){
-  return const Center(
+  return Center(
     child: Text(
-      '你仲未有訂單喎!!!\n\n快啲幫襯下支持下我地啦!!!',
+      'epmty_order_text'.tr,
       textAlign: TextAlign.center,
-      style: TextStyle(color: Colors.grey),
+      style: const TextStyle(color: Colors.grey),
     ),
   );
 }

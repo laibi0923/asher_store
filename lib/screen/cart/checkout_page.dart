@@ -28,28 +28,28 @@ class CheckOutPage extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 80, left: 20, right: 20),
                   children: [
                     
-                    const Text(
-                      '收件人資料',
-                      style: TextStyle(fontSize: xTextSize26, fontWeight: FontWeight.bold),
+                    Text(
+                      'checkout_title1'.tr,
+                      style: const TextStyle(fontSize: xTextSize26, fontWeight: FontWeight.bold),
                     ),
 
                     CustomizeTextField(
-                      title: '收件人名稱',
+                      title: 'user_info_receipient_name'.tr,
                       maxLine: 1,
                       textEditingController: _checkoutController.userRecipientEditingControlle,
                     ),
 
                     CustomizePhoneTextField(
-                      title: '聯絡電話',
+                      title: 'user_info_contact_no'.tr,
                       isPassword: false,
                       mTextEditingController: _checkoutController.phoneEditingControlle,
                     ),
 
                     Container(height: 20,),
 
-                    const Text(
-                      '運送地址',
-                      style: TextStyle(fontSize: xTextSize26, fontWeight: FontWeight.bold),
+                    Text(
+                      'checkout_title2'.tr,
+                      style: const TextStyle(fontSize: xTextSize26, fontWeight: FontWeight.bold),
                     ),
 
                     Container(height: 20,),
@@ -117,9 +117,9 @@ class CheckOutPage extends StatelessWidget {
               canTapOnHeader: true,
               isExpanded: _checkoutController.expansionPanelOpenStatus[0],
               headerBuilder: (context, isOpen){
-                return const Align(
+                return Align(
                   alignment: Alignment.centerLeft,
-                  child: Text('順豐智能櫃')
+                  child: Text('checkout_sflocker'.tr)
                 );
               },
               body: Align(
@@ -128,10 +128,10 @@ class CheckOutPage extends StatelessWidget {
                   splashColor: Colors.transparent,
                   onTap: () => _checkoutController.sfLockerSelecter(),
                   child: _checkoutController.sFLockerLocation().isEmpty ? 
-                  const Padding(
-                    padding: EdgeInsets.all(15.0),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
                     child: Center(
-                      child: Text('點擊選擇地點')
+                      child: Text('checkout_select_location'.tr)
                     ),
                   ) : 
                   Column(
@@ -159,9 +159,9 @@ class CheckOutPage extends StatelessWidget {
               canTapOnHeader: true,
               isExpanded: _checkoutController.expansionPanelOpenStatus[1],
               headerBuilder: (context, isOpen){
-                return const Align(
+                return Align(
                   alignment: Alignment.centerLeft,
-                  child: Text('送貨至...')
+                  child: Text('checkout_shippingto'.tr)
                 );
               },
               body: _buildAddressFrom()
@@ -180,17 +180,17 @@ class CheckOutPage extends StatelessWidget {
     return Column(
       children: [
         CustomizeTextField(
-          title: '室 / 樓層',
+          title: 'user_info_unit'.tr,
           maxLine: 1,
           textEditingController: _checkoutController.unitEditingControlle,
         ),
         CustomizeTextField(
-          title: "大廈名稱",
+          title: "user_info_building".tr,
           maxLine: 1,
           textEditingController: _checkoutController.estateEditingControlle,
         ),
         CustomizeTextField(
-          title:'屋苑名稱 / 地區',
+          title:'user_info_district'.tr,
           maxLine: 1,
           textEditingController: _checkoutController.districtEditingControlle,
         ),
@@ -225,7 +225,7 @@ class CheckOutPage extends StatelessWidget {
                 ),
               );
             }),
-            const Text('保存運送地址')
+            Text('checkout_saveaddress'.tr)
           ],
         ),
       ),
@@ -240,12 +240,12 @@ class CheckOutPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
 
-        const Padding(
-          padding: EdgeInsets.only(top: 10),
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
           child: Center(
             child: Text(
-              '付款總額',
-              style: TextStyle(
+              'checkout_totalpayment'.tr,
+              style: const TextStyle(
                 fontSize: xTextSize18, 
                 fontWeight: FontWeight.bold,
               ),
@@ -276,7 +276,7 @@ class CheckOutPage extends StatelessWidget {
               ),
             ),
             onPressed: () => _checkoutController.makePayment(),
-            child: const Text('輸入信用卡付款')
+            child: Text('checkout_cardpayment'.tr)
           ),
         ),
 

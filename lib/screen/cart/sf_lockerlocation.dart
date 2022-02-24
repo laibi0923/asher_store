@@ -1,6 +1,7 @@
 import 'package:asher_store/constants.dart';
 import 'package:asher_store/sflocker_list.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SFLockerLocation extends StatefulWidget {
   const SFLockerLocation({ Key? key }) : super(key: key);
@@ -50,10 +51,10 @@ class _SFLockerLocationState extends State<SFLockerLocation> {
       backgroundColor: Colors.white,
       appBar: _buildSearchAppbar(context),
       body:  _resultList.isEmpty ? 
-      const Center(
+      Center(
         child: Text(
-          '找不到你所輸入的智能櫃',
-          style: TextStyle(color: Colors.grey),
+          'empty_sflocker_text'.tr,
+          style: const TextStyle(color: Colors.grey),
         )
       ) :
       ListView.builder(
@@ -115,11 +116,11 @@ class _SFLockerLocationState extends State<SFLockerLocation> {
                 child: TextField(
                   textInputAction: TextInputAction.search,
                   controller: _searchTextController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.all(0),
+                  contentPadding: const EdgeInsets.all(0),
                   isDense: true,
-                  hintText: '搜尋智能櫃',
+                  hintText: 'sflocker_text'.tr,
                 ),
                 onSubmitted: (value) => _searchLocation(value)
               )

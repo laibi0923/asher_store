@@ -18,7 +18,7 @@ class CouponHistory extends StatelessWidget {
         elevation: 0,
         automaticallyImplyLeading: false,
         centerTitle: true,
-        title: const Text('已使用優惠代碼'),
+        title: Text('coupon_history_title'.tr),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10),
@@ -31,9 +31,9 @@ class CouponHistory extends StatelessWidget {
       ),
       body: Center(
         child: _userCouponController.userCouponList.isEmpty ? 
-        const Text(
-          '尚未有任何紀錄',
-          style: TextStyle(color: Colors.grey),
+        Text(
+          'empty_coupon_text'.tr,
+          style: const TextStyle(color: Colors.grey),
         ) :
         ListView.builder(
           itemCount: _userCouponController.userCouponList.length,
@@ -52,8 +52,8 @@ class CouponHistory extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const Expanded(
-                        child: Text('使用日期 : ')
+                      Expanded(
+                        child: Text('coupon_record_date'.tr)
                       ),
                       Text(
                         DateFormat('yyyy/MM/dd  kk:mm').format(DateTime.fromMicrosecondsSinceEpoch(_userCouponController.userCouponList[index].date.microsecondsSinceEpoch))
@@ -62,8 +62,8 @@ class CouponHistory extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      const Expanded(
-                        child: Text('優惠碼 : ')
+                      Expanded(
+                        child: Text('coupon_code_text'.tr)
                       ),
                       Text(_userCouponController.userCouponList[index].code, style: const TextStyle(fontWeight: FontWeight.bold),),
                     ],

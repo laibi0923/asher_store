@@ -155,9 +155,9 @@ class ProductDetails extends StatelessWidget {
                     value: productModel.discountPrice! == 0 ? productModel.price! : productModel.discountPrice!, 
                     textStyle: const TextStyle(color: Colors.white),
                   ),
-                  const Text(
-                    '產品資訊',
-                    style: TextStyle(color: Colors.white),
+                  Text(
+                    'product_details_title'.tr,
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ],
               ),
@@ -310,13 +310,13 @@ class ProductDetails extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.only(top: 10, bottom: 10),
                               child: _productDetailsController.isExpanedText.value ? 
-                              const Text(
-                                '收起',
-                                style: TextStyle(color: Colors.grey),
+                              Text(
+                                'product_details_less'.tr,
+                                style: const TextStyle(color: Colors.grey),
                               ) : 
-                              const Text(
-                                '更多',
-                                style: TextStyle(color: Colors.grey),
+                              Text(
+                                'product_details_more'.tr,
+                                style: const TextStyle(color: Colors.grey),
                               ),
                             ),
                           )
@@ -362,9 +362,9 @@ class ProductDetails extends StatelessWidget {
                 ),
 
                 //  Shipping Time
-                const Padding(
-                  padding: EdgeInsets.only(left: 20, right: 20),
-                  child: Text('預計送貨時間約 7-11 天'),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  child: Text('product_details_shipping_date'.tr),
                 ),
 
                 //  Refundable
@@ -382,11 +382,11 @@ class ProductDetails extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                       child: Text(
-                        '呎碼',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        'product_details_size'.tr,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
                     Container(
@@ -437,7 +437,7 @@ class ProductDetails extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                         child: Text(
-                          '顏色   (${productModel.color![_productDetailsController.currentColorIndex.value]['COLOR_NAME']})',
+                          'product_details_color'.tr + '(${productModel.color![_productDetailsController.currentColorIndex.value]['COLOR_NAME']})',
                           style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -512,8 +512,8 @@ class ProductDetails extends StatelessWidget {
                 ),
               ),
               onPressed: () => _productDetailsController.addToCart(productModel),
-              child: const Text(
-                '加入購物車',
+              child: Text(
+                'product_details_addcart'.tr,
               ),
             )
           )

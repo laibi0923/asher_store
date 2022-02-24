@@ -20,13 +20,13 @@ class Login extends StatelessWidget {
         children: [
 
           CustomizeTextField(
-            title: '電子郵件', 
+            title: 'login_email'.tr, 
             textEditingController: _landingcontroller.emailEditingController,
             maxLine: 1,
           ),
 
           CustomizeTextField(
-            title: '密碼', 
+            title: 'login_pw'.tr, 
             textEditingController: _landingcontroller.pwEditingController,
             maxLine: 1,
             isPassword: true,
@@ -39,7 +39,7 @@ class Login extends StatelessWidget {
                 const Spacer(),
                 GestureDetector(
                   onTap: () => _authcontroller.passwordReset(_landingcontroller.emailEditingController.text.trim()),
-                  child: const Text('忘記密碼')
+                  child: Text('login_forgotpw'.tr)
                 )
               ],
             ),
@@ -64,8 +64,8 @@ class Login extends StatelessWidget {
                   _landingcontroller.pwEditingController.clear();
                 });
               }, 
-              child: const Text(
-                '登入',
+              child: Text(
+                'login_logintext'.tr,
               ),
             )
           ),

@@ -1,6 +1,7 @@
 
 import 'package:asher_store/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ThankYouScreen extends StatelessWidget {
   const ThankYouScreen({ Key? key }) : super(key: key);
@@ -28,21 +29,21 @@ class ThankYouScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
-          children: const [
+          children: [
 
-            Text(
+            const Text(
               'THANK YOU',
               style: TextStyle(fontSize: xTextSize26, color: Colors.grey, fontWeight: FontWeight.bold),
             ),
 
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(top: 20, bottom: 20),
               child: Icon(Icons.done, size: 80, color: Color(xMainColor),),
             ),
 
             Text(
-              '我們已收到您的訂單 \n 請耐心等侯，我們會盡快將貨品送到你手上。 \n 你隨時可以到訂單紀錄查看您的訂單。',
-              style: TextStyle(color: Colors.grey),
+              'thankyou_content'.tr,
+              style: const TextStyle(color: Colors.grey),
               textAlign: TextAlign.center,
             )
 

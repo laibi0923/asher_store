@@ -34,7 +34,7 @@ class SearchPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 0, bottom: 20),
                 child: Text(
-                  '共找到 ${_searchController.searchResultList.length} 筆 "$searchKey" 的相關資料',
+                  'search_find_title1'.tr + '${_searchController.searchResultList.length}' + 'search_find_title2'.tr + searchKey + 'search_find_title3'.tr,
                   style: const TextStyle(color: Colors.grey),
                 ),
               ),
@@ -45,10 +45,10 @@ class SearchPage extends StatelessWidget {
               Expanded(
                 child: _searchController.searchFliedController.text.isNotEmpty || _searchController.searchResultList.isNotEmpty ?
                 _buildProductGirdView(_searchController.searchResultList) :
-                const Center(
+                Center(
                   child: Text(
-                    '找不到捜尋結果',
-                    style: TextStyle(color: Colors.grey),
+                    'search_empty'.tr,
+                    style: const TextStyle(color: Colors.grey),
                   ),
                 )
               )
@@ -82,11 +82,11 @@ class SearchPage extends StatelessWidget {
               child: TextField(
                 controller: _searchController.searchFliedController,
                 textInputAction: TextInputAction.done,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                 border: InputBorder.none,
-                contentPadding: EdgeInsets.all(0),
+                contentPadding: const EdgeInsets.all(0),
                 isDense: true,
-                hintText: '輸入產品名稱',
+                hintText: 'search_searchtext'.tr,
               ),
                 onSubmitted: (value) => _searchController.queryfromString()
               ),
@@ -147,10 +147,10 @@ class SearchPage extends StatelessWidget {
 
   Widget _buildProductGirdView(List<ProductModel> list){
     if(list.isEmpty){
-      return const Center(
+      return Center(
         child: Text(
-          '找不到捜尋結果',
-          style: TextStyle(color: Colors.grey),
+          'empty_search_text'.tr,
+          style: const TextStyle(color: Colors.grey),
         ),
       );
     }

@@ -109,9 +109,9 @@ class SettingPage extends GetWidget<AuthController> {
                             controller.userModel.value!.name.toString(),
                             style: const TextStyle(fontSize: xTextSize26),
                           ),
-                          const Text(
-                            '編輯你的個人資料',
-                            style: TextStyle(fontSize: xTextSize14),
+                          Text(
+                            'edit_profile'.tr,
+                            style: const TextStyle(fontSize: xTextSize14),
                           )
                         ],
                       ),
@@ -121,11 +121,11 @@ class SettingPage extends GetWidget<AuthController> {
                   // Signout Button
                   GestureDetector(
                     onTap: () => controller.signOut(),
-                    child: const Padding(
-                      padding: EdgeInsets.only(top: 20, bottom: 0),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 20, bottom: 0),
                       child: Text(
-                        '登出',
-                        style: TextStyle(
+                        'logout_btn'.tr,
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold, 
                           fontSize: xTextSize16,
                         ),
@@ -154,24 +154,23 @@ class SettingPage extends GetWidget<AuthController> {
 
           Container(
             padding: const EdgeInsets.only(top: 30, bottom: 10),
-            child: const Text(
-              '訂單',
-              style: TextStyle(fontSize: xTextSize18, fontWeight: FontWeight.bold),
+            child: Text(
+              'order_title'.tr,
+              style: const TextStyle(fontSize: xTextSize18, fontWeight: FontWeight.bold),
             ),
           ),
 
           //  訂單紀錄
           GestureDetector(
             onTap: () => Get.to(() => const OrderHistory()),
-            // onTap: () => _settingviewmodel.orderhistory(),
             child: Container(
               padding: const EdgeInsets.only(top: 10, bottom: 10),
               child: Row(
-                children: const [
+                children: [
                   Expanded(
-                    child: Text('訂單紀錄')
+                    child: Text('order_history'.tr)
                   ),
-                  Icon(Icons.arrow_right_outlined)
+                  const Icon(Icons.arrow_right_outlined)
                 ],
               )
             ),
@@ -199,11 +198,11 @@ class SettingPage extends GetWidget<AuthController> {
             child: Container(
               padding: const EdgeInsets.only(top: 10, bottom: 10),
               child: Row(
-                children: const [
+                children: [
                   Expanded(
-                    child: Text('退貨紀錄')
+                    child: Text('return_history'.tr)
                   ),
-                  Icon(Icons.arrow_right_outlined)
+                  const Icon(Icons.arrow_right_outlined)
                 ],
               )
             ),
@@ -215,11 +214,11 @@ class SettingPage extends GetWidget<AuthController> {
             child: Container(
               padding: const EdgeInsets.only(top: 10, bottom: 10),
               child: Row(
-                children: const [
+                children: [
                   Expanded(
-                    child: Text('優惠代碼紀錄')
+                    child: Text('coupon_history'.tr)
                   ),
-                  Icon(Icons.arrow_right_outlined)
+                  const Icon(Icons.arrow_right_outlined)
                 ],
               )
             ),
@@ -227,9 +226,9 @@ class SettingPage extends GetWidget<AuthController> {
 
           Container(
             padding: const EdgeInsets.only(top: 30, bottom: 10),
-            child: const Text(
-              '一般設定',
-              style: TextStyle(fontSize: xTextSize18, fontWeight: FontWeight.bold),
+            child: Text(
+              'general_setting'.tr,
+              style: const TextStyle(fontSize: xTextSize18, fontWeight: FontWeight.bold),
             ),
           ),
 
@@ -239,8 +238,8 @@ class SettingPage extends GetWidget<AuthController> {
               padding: const EdgeInsets.only(top: 10, bottom: 10),
               child: Row(
                 children: [
-                  const Expanded(
-                    child: Text('語言')
+                  Expanded(
+                    child: Text('language_setting'.tr)
                   ),
                   Text(_settingController.locale[_settingController.languageIndex.value]['name']),
                 ],
@@ -251,11 +250,11 @@ class SettingPage extends GetWidget<AuthController> {
           Container(
             padding: const EdgeInsets.only(top: 10, bottom: 10),
             child: Row(
-              children: const [
+              children: [
                 Expanded(
-                  child: Text('貨幣')
+                  child: Text('currency_setting'.tr)
                 ),
-                Text('HKD'),
+                const Text('HKD'),
               ],
             )
           ),
@@ -263,20 +262,20 @@ class SettingPage extends GetWidget<AuthController> {
           Container(
             padding: const EdgeInsets.only(top: 10, bottom: 10),
             child: Row(
-              children: const [
+              children: [
                 Expanded(
-                  child: Text('暗黑模式')
+                  child: Text('theme_setting'.tr)
                 ),
-                Text('關閉'),
+                Text('close_text'.tr),
               ],
             )
           ),
 
           Container(
             padding: const EdgeInsets.only(top: 10, bottom: 10),
-            child: const Text(
-              '關於我們',
-              style: TextStyle(fontSize: xTextSize18, fontWeight: FontWeight.bold),
+            child: Text(
+              'contact_us'.tr,
+              style: const TextStyle(fontSize: xTextSize18, fontWeight: FontWeight.bold),
             ),
           ),
 
@@ -284,7 +283,7 @@ class SettingPage extends GetWidget<AuthController> {
             onTap: () => Get.to(() => const PrivatePolicy()),
             child: Container(
               padding: const EdgeInsets.only(top: 10, bottom: 10),
-              child: const Text('私隱政策'),
+              child: Text('private_policy'.tr),
             ),
           ),
 
@@ -292,7 +291,7 @@ class SettingPage extends GetWidget<AuthController> {
             onTap: () => Get.to(() => const RefundPolicy()),
             child: Container(
               padding: const EdgeInsets.only(top: 10, bottom: 10),
-              child: const Text('退貨政策'),
+              child: Text('return_policy'.tr),
             ),
           ),
             

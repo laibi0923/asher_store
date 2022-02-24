@@ -24,7 +24,7 @@ class WishlistPage extends StatelessWidget {
         elevation: 0,
         automaticallyImplyLeading: false,
         centerTitle: true,
-        title: const Text('喜愛清單'),
+        title: Text('wishlist_title'.tr),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10),
@@ -168,11 +168,11 @@ class WishlistPage extends StatelessWidget {
                 color: Colors.grey,
               ),
 
-              const Padding(
-                padding: EdgeInsets.only(top: 20, bottom: 40),
+              Padding(
+                padding: const EdgeInsets.only(top: 20, bottom: 40),
                 child: Text(
-                  '還沒有加入喜愛商品',
-                  style: TextStyle(color: Colors.grey),
+                  'empty_wishlist'.tr,
+                  style: const TextStyle(color: Colors.grey),
                 ),
               ),
 
@@ -180,11 +180,11 @@ class WishlistPage extends StatelessWidget {
           ),
         ),
 
-        const Padding(
-          padding: EdgeInsets.only(bottom: 20),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 20),
           child: Text(
-            '為你推薦',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: xTextSize18),
+            'recommendation_item'.tr,
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: xTextSize18),
           ),
         ),
         _productGridView(_productController.productList, _productController.productList.length)

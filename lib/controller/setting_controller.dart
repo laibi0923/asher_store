@@ -27,6 +27,10 @@ class SettingController extends GetxController{
     mSharedPreferences = await SharedPreferences.getInstance();
   }
 
+  Locale getUserLanguageLocale(){
+    return locale[languageIndex.value]['locale'];
+  }
+
   void getUserLanguage(){
     int currentlanguage = mSharedPreferences?.getInt('language') ?? 0;
     languageIndex.value = currentlanguage;

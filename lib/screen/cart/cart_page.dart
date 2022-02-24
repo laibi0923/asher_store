@@ -20,8 +20,8 @@ class CartPage extends StatelessWidget {
         appBar: AppBar(
           elevation: 0,
           automaticallyImplyLeading: false,
-          title: const Center(
-            child: Text('購物車')
+          title: Center(
+            child: Text('cart_title'.tr)
           ),
         ),
         body: _cartController.cartList.isEmpty ? _emptyCartScreen() :
@@ -62,10 +62,10 @@ class CartPage extends StatelessWidget {
         ),
         padding: const EdgeInsets.only(left: 15, right: 15, top: 10, bottom:10),
         child: Row(
-          children: const [
-            Text('輸入優惠代碼'),
-            Spacer(),
-            Icon(Icons.arrow_right)
+          children: [
+            Text('cart_coupon'.tr),
+            const Spacer(),
+            const Icon(Icons.arrow_right)
           ],
         ),
       ),
@@ -110,10 +110,10 @@ class CartPage extends StatelessWidget {
                 ),
               ),
 
-              const Center(
+              Center(
                 child: Text(
-                  '輸入優惠代碼',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
+                  'cart_coupon'.tr,
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
                 )
               ),
 
@@ -155,7 +155,7 @@ class CartPage extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(18)),
                     ),
                   ),
-                  child: const Text('確認'),
+                  child: Text('submit_text'.tr),
                   onPressed: () => _cartController.verifyCouponCode(),
                 )
               )
@@ -185,7 +185,7 @@ class CartPage extends StatelessWidget {
               backgroundColor: const Color(cPink),
               foregroundColor: const Color(cGrey),
               icon: Icons.delete,
-              label: '刪除',
+              label: 'delete_text'.tr,
             )
           ],
         ),
@@ -215,14 +215,14 @@ class CartPage extends StatelessWidget {
           children: [
 
             CartSummaryItemView(
-              title: '小計', 
+              title: 'cart_subamount'.tr, 
               value: 'HKD\$ ' + _cartController.subAmount.toStringAsFixed(2),
               isbold: false,
               showAddBox: false,
             ),
 
             CartSummaryItemView(
-              title: '折扣', 
+              title: 'cart_discount'.tr, 
               value: '-HKD\$ ' + _cartController.discountAmount.toStringAsFixed(2),
               isbold: false,
               showAddBox: false,
@@ -237,12 +237,12 @@ class CartPage extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      '優惠代碼【${_cartController.discountCode}】  ', 
+                      'cart_couponcode'.tr + '【${_cartController.discountCode}】', 
                       style: const TextStyle(color: Colors.grey)
                     ),
-                    const Text(
-                      '清除', 
-                      style: TextStyle(color: Colors.redAccent)
+                    Text(
+                      'clear_text'.tr, 
+                      style: const TextStyle(color: Colors.redAccent)
                     ),
                   ],
                 ),
@@ -250,14 +250,14 @@ class CartPage extends StatelessWidget {
             ),
 
             CartSummaryItemView(
-              title: '運費 (滿3件免運費)', 
+              title: 'cart_shipping'.tr, 
               value: 'HKD\$ ' + _cartController.shippingFree.toStringAsFixed(2),
               isbold: false,
               showAddBox: false,
             ),
 
             CartSummaryItemView(
-              title: '總計', 
+              title: 'cart_totalamount'.tr, 
               value: 'HKD\$ ' + _cartController.totalAmount.toStringAsFixed(2),
               isbold: true,
               showAddBox: false,
@@ -283,8 +283,8 @@ class CartPage extends StatelessWidget {
         ),
         onPressed: () => Get.find<CartController>().checkbill(),
         child: Get.find<AuthController>().auth.currentUser == null ?
-          const Text('登入會員後結帳') :
-          const Text('輸入運送地址及付款') 
+          Text('shipping_details_btn1'.tr) :
+          Text('shipping_details_btn2'.tr) 
       )
     );
   }
@@ -300,11 +300,11 @@ class CartPage extends StatelessWidget {
             color: Colors.grey,
           ),
           
-          const Padding(
-            padding: EdgeInsets.only(top: 20),
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
             child: Text(
-              '你的購物車已空.', 
-              style : TextStyle(color: Colors.grey)
+              'empty_cart_string'.tr, 
+              style : const TextStyle(color: Colors.grey)
             ),
           )
 

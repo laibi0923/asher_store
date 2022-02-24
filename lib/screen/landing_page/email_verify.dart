@@ -25,17 +25,17 @@ class EmailVerify extends StatelessWidget {
                   size: 100,
                 ),
               ),
-              const Center(
+              Center(
                 child: Text(
-                  '我們已發送確認電郵到閣下郵箱，\n請登入你的電郵點擊生效你的帳戶。',
+                  'email_verify_content'.tr,
                   textAlign: TextAlign.center,
                 ),
               ),
 
 
-              const Padding(
-                padding: EdgeInsets.only(top: 100),
-                child: Text('還沒有收到電郵嗎?'),
+              Padding(
+                padding: const EdgeInsets.only(top: 100),
+                child: Text('email_verify_usreceivedemail'.tr),
               ),
 
               Padding(
@@ -49,8 +49,8 @@ class EmailVerify extends StatelessWidget {
                     ),
                   ),
                   onPressed: () => _authController.sendEmailVerification(),
-                  child:  const Text(
-                    '重新發送確認電郵',
+                  child:  Text(
+                    'email_verify_resendemail'.tr,
                   ),
                 ),
               )

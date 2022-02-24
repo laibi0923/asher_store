@@ -26,10 +26,10 @@ class UserInformation extends GetWidget<AuthController> {
                     padding: const EdgeInsets.only(top: 40, bottom: 20),
                     child: Row(
                       children: [
-                        const Expanded(
+                        Expanded(
                           child: Text(
-                            '個人資料',
-                            style: TextStyle(
+                            'user_info_titile'.tr,
+                            style: const TextStyle(
                               fontSize: xTextSize26,
                               fontWeight: FontWeight.bold
                             ),
@@ -44,44 +44,44 @@ class UserInformation extends GetWidget<AuthController> {
                   ),
                   CustomizeTextField(
                     isenabled: false,
-                    title: '用戶電郵',
+                    title: 'user_info_email'.tr,
                     isPassword: false,
                     textEditingController: _userinfoController.emailEditingController,
                   ),
                   CustomizeTextField(
-                    title: '用戶名稱',
+                    title: 'user_info_username'.tr,
                     isPassword: false,
                     textEditingController: _userinfoController.userNameEditingController,
                   ),       
-                  const Padding(
-                    padding: EdgeInsets.only(top: 40, bottom: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 40, bottom: 20),
                     child: Text(
-                      '送貨地址',
-                      style: TextStyle(fontSize: xTextSize26, fontWeight: FontWeight.bold),
+                      'user_info_shippingaddress'.tr,
+                      style: const TextStyle(fontSize: xTextSize26, fontWeight: FontWeight.bold),
                     ),
                   ),
                   CustomizeTextField(
-                    title: '收件人名稱',
+                    title: 'user_info_receipient_name'.tr,
                     isPassword: false,
                     textEditingController: _userinfoController.userRecipientEditingController,
                   ),
                   CustomizePhoneTextField(
-                    title: '聯絡電話',
+                    title: 'user_info_contact_no'.tr,
                     isPassword: false,
                     mTextEditingController: _userinfoController.phoneEditingController,
                   ),
                   CustomizeTextField(
-                    title: '室 / 樓層',
+                    title: 'user_info_unit'.tr,
                     isPassword: false,
                     textEditingController: _userinfoController.unitEditingController,
                   ),
                   CustomizeTextField(
-                    title: '大廈名稱',
+                    title: 'user_info_building'.tr,
                     isPassword: false,
                     textEditingController: _userinfoController.estateEditingController,
                   ),
                   CustomizeTextField(
-                    title: '屋苑名稱 / 地區',
+                    title: 'user_info_district'.tr,
                     isPassword: false,
                     textEditingController: _userinfoController.districtEditingController,
                   ),
@@ -99,7 +99,7 @@ class UserInformation extends GetWidget<AuthController> {
                   primary: const Color(xMainColor),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(19))
                 ),
-                child: const Text('保存', style: TextStyle(fontSize: xTextSize16)),
+                child: Text('user_info_save'.tr, style: const TextStyle(fontSize: xTextSize16)),
                 onPressed: () {
                   _userinfoController.updateUserInfo(controller.user.value!.uid.toString());
                   Get.back();

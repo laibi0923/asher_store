@@ -3,6 +3,7 @@ import 'package:asher_store/controller/cart_controller.dart';
 import 'package:asher_store/controller/category_controller.dart';
 import 'package:asher_store/controller/policy_controller.dart';
 import 'package:asher_store/controller/refund_controller.dart';
+import 'package:asher_store/controller/setting_controller.dart';
 import 'package:asher_store/controller/usercoupon_controller.dart';
 import 'package:asher_store/controller/home_controller.dart';
 import 'package:asher_store/controller/mailbox_controller.dart';
@@ -35,6 +36,7 @@ Future<void> main() async {
     Get.put(UserCouponController());
     Get.put(RefundController());
     Get.put(PolicyController());
+    Get.put(SettingController());
   });
   runApp(const MyApp());
 }
@@ -56,7 +58,8 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       translations: LocaleString(),
-      locale: const Locale('en', 'US'),
+      // locale: const Locale('en', 'US'),
+      locale: Get.find<SettingController>().getUserLanguageLocale(),
       theme: ThemeData(
         primaryColor: Colors.white,
         scaffoldBackgroundColor: Colors.white,
