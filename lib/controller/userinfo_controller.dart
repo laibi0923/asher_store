@@ -44,7 +44,7 @@ class UserInfoController extends GetxController{
   //  更新用戶資料
   void updateUserInfo(String uid){
     if(userNameEditingController.text.trim().isEmpty){
-      Get.snackbar('更新用戶資料', '用戶名稱不能為空', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('userinfo_title'.tr, 'userinfo_erro_username'.tr, snackPosition: SnackPosition.BOTTOM);
     } else {
       UserModel userModel = UserModel(
         lastModify: Timestamp.now(),

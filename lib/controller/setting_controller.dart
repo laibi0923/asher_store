@@ -13,8 +13,8 @@ class SettingController extends GetxController{
   Rx<bool> showLoading = false.obs;
   RxInt languageIndex = 0.obs;
   final List locale =[
-    {'name':'ENGLISH','locale': const Locale('en','US')},
     {'name':'繁體中文','locale': const Locale('zh','HK')},
+    {'name':'English','locale': const Locale('en','US')},
   ];
 
   @override

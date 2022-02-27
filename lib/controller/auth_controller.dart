@@ -36,13 +36,13 @@ class AuthController extends GetxController{
   Future<void> registerByEmail(String email, String password, String confirmPw) async {
 
     if(email.isEmpty){
-      Get.snackbar('註冊失敗', '請輸入電郵', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('register_erro_title'.tr, 'register_erro_email'.tr, snackPosition: SnackPosition.BOTTOM);
     } else if(password.isEmpty){
-      Get.snackbar('註冊失敗', '請輸入密碼', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('register_erro_title'.tr, 'register_erro_pw'.tr, snackPosition: SnackPosition.BOTTOM);
     } else if(confirmPw.isEmpty){
-      Get.snackbar('註冊失敗', '請再次輸入密碼', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('register_erro_title'.tr, 'register_erro_confirmpw'.tr, snackPosition: SnackPosition.BOTTOM);
     } else if(password != confirmPw){
-      Get.snackbar('註冊失敗', '確認密碼不一致, 請重新輸入', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('register_erro_title'.tr, 'register_erro_pwnotmatch'.tr, snackPosition: SnackPosition.BOTTOM);
     } else {
 
       try{
@@ -61,19 +61,19 @@ class AuthController extends GetxController{
       } on FirebaseAuthException catch (e){
         switch(e.code){
           case 'weak-password':
-            Get.snackbar('註冊失敗', '請檢查你的密碼強度', snackPosition: SnackPosition.BOTTOM);
+            Get.snackbar('register_erro_title'.tr, 'register_erro_pwweak'.tr, snackPosition: SnackPosition.BOTTOM);
             break;
 
           case 'email-already-in-use':
-            Get.snackbar('註冊失敗', '此電郵已註冊', snackPosition: SnackPosition.BOTTOM);
+            Get.snackbar('register_erro_title'.tr, 'register_erro_areadyregister'.tr, snackPosition: SnackPosition.BOTTOM);
             break;
 
           case 'invalid-email':
-            Get.snackbar('註冊失敗', '輸入電郵不正確', snackPosition: SnackPosition.BOTTOM);
+            Get.snackbar('register_erro_title'.tr, 'register_erro_emailincorrect'.tr, snackPosition: SnackPosition.BOTTOM);
             break;
 
           default:
-            Get.snackbar('註冊失敗', '請與管理員聮絡', snackPosition: SnackPosition.BOTTOM);
+            Get.snackbar('register_erro_title'.tr, 'register_erro_contactadmin'.tr, snackPosition: SnackPosition.BOTTOM);
             break;
         }
       }
@@ -90,15 +90,15 @@ class AuthController extends GetxController{
   //  發送重置密碼電郵
   Future<void> passwordReset(String email) async {
     if(email.isEmpty){
-      Get.snackbar('重置密碼失敗', '請輸入電郵', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('resetpw_fail_title'.tr, 'resetpw_fail_emailempty'.tr, snackPosition: SnackPosition.BOTTOM);
     } else {
       try {
         await auth.sendPasswordResetEmail(email: email);
-        Get.snackbar('重置密碼成功', '請檢查你的電子郵箱', snackPosition: SnackPosition.BOTTOM);
+        Get.snackbar('resetpw_sussess'.tr, 'resetpw_sussess_checkemail'.tr, snackPosition: SnackPosition.BOTTOM);
       } on FirebaseAuthException catch (e) {
         switch (e.code){
           case 'invalid-email':
-          Get.snackbar('重置密碼失敗', '請輸入正確電郵', snackPosition: SnackPosition.BOTTOM);
+          Get.snackbar('resetpw_fail_title'.tr, 'resetpw_fail_emailincorrect'.tr, snackPosition: SnackPosition.BOTTOM);
           break;
         }
       } catch (e) {
@@ -116,9 +116,9 @@ class AuthController extends GetxController{
   //  以電郵登入
   Future<void> signIn(String email, String password) async {
     if(email.isEmpty){
-      Get.snackbar('登入失敗', '請輸入電郵', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('login_fail_title'.tr, 'login_fail_emptyemail'.tr, snackPosition: SnackPosition.BOTTOM);
     } else if (password.isEmpty){
-      Get.snackbar('登入失敗', '請輸入密碼', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('login_fail_title'.tr, 'login_fail_emptypw'.tr, snackPosition: SnackPosition.BOTTOM);
     } else {
       try{
         await auth.signInWithEmailAndPassword(email: email, password: password).then((value) {
@@ -132,16 +132,16 @@ class AuthController extends GetxController{
 
         switch (e.code) {
           case 'invalid-email':
-            Get.snackbar('登入失敗', '你所輸入的電郵或密碼不正確。', snackPosition: SnackPosition.BOTTOM);
+            Get.snackbar('login_fail_title'.tr, 'login_fail_incorrectdata'.tr, snackPosition: SnackPosition.BOTTOM);
             break;
           case 'wrong-password':
-            Get.snackbar('登入失敗', '你所輸入的電郵或密碼不正確。', snackPosition: SnackPosition.BOTTOM);
+            Get.snackbar('login_fail_title'.tr, 'login_fail_incorrectdata'.tr, snackPosition: SnackPosition.BOTTOM);
             break;
           case 'too-many-requests':
-            Get.snackbar('登入失敗', '由於多次登入失敗，請稍後嘗試。', snackPosition: SnackPosition.BOTTOM);
+            Get.snackbar('login_fail_title'.tr, 'login_fail_failtoomuch'.tr, snackPosition: SnackPosition.BOTTOM);
             break;
           default:
-            Get.snackbar('登入失敗', '請稍後嘗試', snackPosition: SnackPosition.BOTTOM);
+            Get.snackbar('login_fail_title'.tr, 'login_fail_tryagainlater'.tr, snackPosition: SnackPosition.BOTTOM);
             break;
         }
         

@@ -28,25 +28,25 @@ class OrderHistoryController extends GetxController{
     //  1.判斷貨品可否退貨或申請退貨中
     //  此貨品不能退貨
     if(orderProductModel.refundAble == false){
-      Get.snackbar('退貨提示', '此貨品不能退貨', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('refund_title'.tr, 'refund_cannot_refund'.tr, snackPosition: SnackPosition.BOTTOM);
       return;
     }
 
     //  此貨品退貨申請中
     if(orderProductModel.refundStatus == '退貨申請中'){
-      Get.snackbar('退貨提示', '此貨品退貨申請中，請耐心等候', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('refund_title'.tr, 'refund_cannot_refundprocessing'.tr, snackPosition: SnackPosition.BOTTOM);
       return;
     }
 
     //  此貨品已退貨
     if(orderProductModel.refundStatus == '已退貨'){
-      Get.snackbar('退貨提示', '此貨品已退貨', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('refund_title'.tr, 'refund_cannot_refundaready'.tr, snackPosition: SnackPosition.BOTTOM);
       return;
     }
 
     //  此貨品尚未出貨
     if(orderProductModel.shippingStatus == ''){
-      Get.snackbar('退貨提示', '此貨品出貨進行中', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('refund_title'.tr, 'refund_cannot_onshipping'.tr, snackPosition: SnackPosition.BOTTOM);
       return;
     }
 
@@ -54,11 +54,11 @@ class OrderHistoryController extends GetxController{
     bool dialogResult = await showDialog(
       context: Get.context!, 
       builder: (BuildContext context){
-        return const CustomizeDialog(
-          title: '退貨申請',
-          content: '確定要退此貨品嗎? \n 申請後我們會以電郵形式與您了解。', 
-          submitBtnText: '確定',
-          cancelBtnText: '取消'
+        return CustomizeDialog(
+          title: 'refund_apply_title'.tr,
+          content: 'refund_apply_content'.tr, 
+          submitBtnText: 'submit_text'.tr,
+          cancelBtnText: 'cancel_text'.tr
         );
       }
     );
@@ -72,7 +72,7 @@ class OrderHistoryController extends GetxController{
       FirebaseService().makeRefund(orderModel, orderProductModel.orderProductNo.toString());
   
       Get.back();
-      Get.snackbar('退貨提示', '此貨品退貨申請成功，稍後時間會有專人與你聯絡，請耐心等候。', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('refund_title'.tr, 'refund_cannot_refundprocessing1'.tr, snackPosition: SnackPosition.BOTTOM);
 
     }
 

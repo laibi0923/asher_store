@@ -88,23 +88,23 @@ class CheckOutController extends GetxController{
   Future<void> makePayment() async {
 
     if(userRecipientEditingControlle.text.trim().isEmpty){
-      Get.snackbar('提示', '請選輸入收件人名稱', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('checkout_erro_title'.tr, 'checkout_erro_name'.tr, snackPosition: SnackPosition.BOTTOM);
       return;
     }
 
     if(phoneEditingControlle.text.trim().isEmpty){
-      Get.snackbar('提示', '請輸入聯絡電話', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('checkout_erro_title'.tr, 'checkout_erro_phone'.tr, snackPosition: SnackPosition.BOTTOM);
       return;
     }
 
     if(expansionPanelOpenStatus[0] == false && expansionPanelOpenStatus[1] == false){
-      Get.snackbar('提示', '請選擇送貨方式', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('checkout_erro_title'.tr, 'checkout_erro_shippingmethod'.tr, snackPosition: SnackPosition.BOTTOM);
       return;
     }
 
     if(expansionPanelOpenStatus[0]){
       if(sFLockerLocation.isEmpty){
-        Get.snackbar('提示', '請選擇智能櫃地點', snackPosition: SnackPosition.BOTTOM);
+        Get.snackbar('checkout_erro_title'.tr, 'checkout_erro_dflockerlocation'.tr, snackPosition: SnackPosition.BOTTOM);
         return;
       }
 
@@ -122,17 +122,17 @@ class CheckOutController extends GetxController{
     if(expansionPanelOpenStatus[1]){
 
       if(unitEditingControlle.text.trim().isEmpty){
-        Get.snackbar('提示', '請輸入單位或樓層', snackPosition: SnackPosition.BOTTOM);
+        Get.snackbar('checkout_erro_title'.tr, 'checkout_erro_unit'.tr, snackPosition: SnackPosition.BOTTOM);
         return;
       }
 
       if(estateEditingControlle.text.trim().isEmpty){
-        Get.snackbar('提示', '請輸入大廈名稱', snackPosition: SnackPosition.BOTTOM);
+        Get.snackbar('checkout_erro_title'.tr, 'checkout_erro_building'.tr, snackPosition: SnackPosition.BOTTOM);
         return;
       }
 
       if(districtEditingControlle.text.trim().isEmpty){
-        Get.snackbar('提示', '請輸入地區', snackPosition: SnackPosition.BOTTOM);
+        Get.snackbar('checkout_erro_title'.tr, 'checkout_erro_district'.tr, snackPosition: SnackPosition.BOTTOM);
         return;
       }
 

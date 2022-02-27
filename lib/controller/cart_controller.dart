@@ -159,13 +159,13 @@ class CartController extends GetxController{
     
     if(couponEditingController.text.trim().isEmpty){
       Get.back();
-      Get.snackbar('提示', '請輸入優惠碼', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('coupon_verify_title'.tr, 'coupon_code_empty'.tr, snackPosition: SnackPosition.BOTTOM);
     } 
 
     //  檢查用戶有冇用過此代碼
     for(int i = 0; i < Get.find<UserCouponController>().userCouponList.length; i++){
       if(Get.find<UserCouponController>().userCouponList[i].code.toUpperCase() == couponEditingController.text.trim().toUpperCase()){
-        Get.snackbar('提示', '此優惠代碼您已經使用過', snackPosition: SnackPosition.BOTTOM);
+        Get.snackbar('coupon_verify_title'.tr, 'coupon_code_used'.tr, snackPosition: SnackPosition.BOTTOM);
         return;
       }
     }
@@ -176,7 +176,7 @@ class CartController extends GetxController{
 
         // 判斷優惠代碼過期
         if(couponList[i].unLimited == false && couponList[i].validDate.millisecondsSinceEpoch < Timestamp.now().millisecondsSinceEpoch){
-          Get.snackbar('提示', '此優惠已失效', snackPosition: SnackPosition.BOTTOM);
+          Get.snackbar('coupon_verify_title'.tr, 'coupon_code_exprie'.tr, snackPosition: SnackPosition.BOTTOM);
           return;
         } else {
 

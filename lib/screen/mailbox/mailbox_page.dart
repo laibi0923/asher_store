@@ -74,35 +74,37 @@ class MailboxPage extends GetWidget<AuthController> {
 
     final _rootController = Get.put(RootController());
 
-    return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.only(left: 20, right: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
 
-          Text(
-            'join_us_content'.tr,
-            textAlign: TextAlign.center,
-          ),
+            Text(
+              'join_us_content'.tr,
+              textAlign: TextAlign.center,
+            ),
 
-          const SizedBox(height: 40,),
+            const SizedBox(height: 40,),
 
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary:  const Color(xMainColor),
-              elevation: 0,
-              shape:  const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(18)),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary:  const Color(xMainColor),
+                elevation: 0,
+                shape:  const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(18)),
+                ),
+              ),
+              onPressed: () => _rootController.jumpToPage(4),
+              child: Text(
+                'join_us_btn'.tr,
               ),
             ),
-            onPressed: () => _rootController.jumpToPage(4),
-            child: Text(
-              'join_us_btn'.tr,
-            ),
-          ),
 
-        ],
+          ],
+        ),
       ),
     );
   }

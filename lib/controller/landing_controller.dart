@@ -7,7 +7,7 @@ class LandingController extends GetxController with GetSingleTickerProviderState
   final TextEditingController emailEditingController = TextEditingController();
   final TextEditingController pwEditingController = TextEditingController();
   final TextEditingController firmPwEditingController = TextEditingController();
-  final List<String> tabtitle = ['登入', '註冊'];
+  final List<String> tabtitle = ['login_tag'.tr, 'register_tag'.tr];
   late  TabController tabController = TabController(length: tabtitle.length, vsync: this, initialIndex: 0);
   final PageController pageController = PageController();
 
